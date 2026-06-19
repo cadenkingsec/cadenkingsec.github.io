@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caden King - Security Professional & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #764ba2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            margin-bottom: 0;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .project-card, .experience-item, .skill-category {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            border-left: 4px solid #764ba2;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .education-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .certification-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .certification-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .blog-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            border-top: 3px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .blog-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            margin-top: 0;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CK</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="hero">
+            <h1>Caden King</h1>
+            <p>Security-Focused Developer | Cybersecurity Enthusiast | Full-Stack Builder</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>
+                I'm a passionate developer with a strong focus on security and building robust, scalable applications. 
+                With expertise in full-stack development and cybersecurity principles, I create solutions that are not 
+                just functional but also secure by design.
+            </p>
+            <p>
+                I believe in continuous learning and staying ahead of the curve with emerging technologies. When I'm 
+                not coding or securing systems, you'll find me exploring new security vulnerabilities, contributing to 
+                open source, or documenting my findings on my blog.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>Project Title Here</h3>
+                <p><strong>Tech Stack:</strong> [Technologies Used]</p>
+                <p>
+                    Brief description of what this project does, the problem it solves, and the impact it had. 
+                    Include key features and your role in the development.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">View Project →</a></p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title Here</h3>
+                <p><strong>Tech Stack:</strong> [Technologies Used]</p>
+                <p>
+                    Brief description of what this project does, the problem it solves, and the impact it had. 
+                    Include key features and your role in the development.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">View Project →</a></p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Title Here</h3>
+                <p><strong>Tech Stack:</strong> [Technologies Used]</p>
+                <p>
+                    Brief description of what this project does, the problem it solves, and the impact it had. 
+                    Include key features and your role in the development.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">View Project →</a></p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Job Title</h3>
+                <p><strong>Company Name</strong> | Month Year – Present</p>
+                <p>
+                    Description of your role, responsibilities, and key achievements. Highlight specific projects, 
+                    technologies used, and metrics demonstrating impact (e.g., "improved performance by X%", 
+                    "led team of Y developers").
+                </p>
+                <p>
+                    <strong>Key Accomplishments:</strong>
+                    <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <li>Achievement or project outcome</li>
+                        <li>Technical contribution or innovation</li>
+                        <li>Team or business impact</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Previous Job Title</h3>
+                <p><strong>Previous Company</strong> | Month Year – Month Year</p>
+                <p>
+                    Description of your role, responsibilities, and key achievements. Highlight specific projects, 
+                    technologies used, and metrics demonstrating impact.
+                </p>
+                <p>
+                    <strong>Key Accomplishments:</strong>
+                    <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <li>Achievement or project outcome</li>
+                        <li>Technical contribution or innovation</li>
+                        <li>Team or business impact</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="container">
+            <h2>Latest Blog Posts</h2>
+            
+            <div class="blog-card">
+                <div class="blog-date">June 19, 2026</div>
+                <h3>Blog Post Title</h3>
+                <p>
+                    Brief excerpt of your blog post that hooks the reader. This should give a compelling preview 
+                    of the topic you're covering and why it matters.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">Read More →</a></p>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-date">June 12, 2026</div>
+                <h3>Blog Post Title</h3>
+                <p>
+                    Brief excerpt of your blog post that hooks the reader. This should give a compelling preview 
+                    of the topic you're covering and why it matters.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">Read More →</a></p>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-date">June 5, 2026</div>
+                <h3>Blog Post Title</h3>
+                <p>
+                    Brief excerpt of your blog post that hooks the reader. This should give a compelling preview 
+                    of the topic you're covering and why it matters.
+                </p>
+                <p><a href="#" style="color: #667eea; font-weight: bold;">Read More →</a></p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="container">
+            <h2>Certifications & Credentials</h2>
+            
+            <div class="certification-item">
+                <div>
+                    <h3 style="margin-top: 0;">Certification Name</h3>
+                    <p style="margin: 0;">Issuing Organization | Year</p>
+                </div>
+                <span class="certification-badge">Active</span>
+            </div>
+
+            <div class="certification-item">
+                <div>
+                    <h3 style="margin-top: 0;">Certification Name</h3>
+                    <p style="margin: 0;">Issuing Organization | Year</p>
+                </div>
+                <span class="certification-badge">Active</span>
+            </div>
+
+            <div class="certification-item">
+                <div>
+                    <h3 style="margin-top: 0;">Certification Name</h3>
+                    <p style="margin: 0;">Issuing Organization | Year</p>
+                </div>
+                <span class="certification-badge">Active</span>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 style="margin-top: 0;">Backend Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Go</span>
+                        <span class="skill-badge">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 style="margin-top: 0;">Frontend Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 style="margin-top: 0;">Security & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Penetration Testing</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">Kubernetes</span>
+                        <span class="skill-badge">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 style="margin-top: 0;">Tools & Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Linux</span>
+                        <span class="skill-badge">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="container">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Degree Program Name</h3>
+                <p><strong>University/Institution Name</strong></p>
+                <p><strong>Graduation:</strong> Month Year</p>
+                <p>
+                    Relevant coursework, honors, or achievements. Include GPA if strong, relevant projects, 
+                    or academic honors.
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3>Bootcamp or Specialized Program</h3>
+                <p><strong>Program Provider</strong></p>
+                <p><strong>Completion:</strong> Month Year</p>
+                <p>
+                    Description of the program focus, key projects completed, and skills acquired.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <h2>Let's Connect</h2>
+            <p style="text-align: center; font-size: 1.1rem;">
+                I'm always interested in hearing about new opportunities, security challenges, or 
+                collaboration ideas. Feel free to reach out!
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/cadenkingsec">github.com/cadenkingsec</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Twitter/X</h3>
+                    <p><a href="https://twitter.com/yourhandle">@yourhandle</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caden King. All rights reserved. Built with security and quality in mind.</p>
+    </footer>
+</body>
+</html>
