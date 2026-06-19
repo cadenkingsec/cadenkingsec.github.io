@@ -1,6 +1,6 @@
 # cadenkingsec.github.io
 
-Personal website and blog for Caden King — built with GitHub Pages.
+Personal portfolio website and blog for Caden King — built with GitHub Pages.
 
 This repository contains the source for my personal site, hosted at https://cadenkingsec.github.io. It includes HTML, CSS, and any assets used on the site.
 
