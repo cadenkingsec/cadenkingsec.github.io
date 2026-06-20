@@ -64,11 +64,13 @@
             padding: 0 2rem;
         }
 
+        /* Ensure anchored sections are scrolled into view below the sticky header */
         section {
             padding: 4rem 0;
             background: white;
             margin-bottom: 2rem;
             border-radius: 8px;
+            scroll-margin-top: 6rem; /* prevents header from covering content when linking to anchors */
         }
 
         section:nth-child(even) {
@@ -284,6 +286,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -534,6 +537,31 @@
                 <p><strong>Virginia Tech College of Engineering</strong> | Aug. 2023 – Apr. 2025 | Blacksburg, Virginia</p>
                 <p>GPA: 3.5/4.0</p>
                 <p>Activities: CyberVT; CS Careers; AutoDrive Challenge; Galipatia living-learning engineering community</p>
+            </div>
+        </section>
+
+        <!-- Blog Section (added back, placed before Contact) -->
+        <section id="blog" class="container">
+            <h2>Blog</h2>
+
+            <div class="blog-card">
+                <div class="blog-date">Jun 20, 2026</div>
+                <h3>Welcome back to the blog</h3>
+                <p>
+                    This is a placeholder post to restore the blog section. You can add posts here as separate HTML
+                    snippets, link to a posts directory, or convert this site to use a static site generator later.
+                </p>
+                <p><a href="#" style="color:#667eea; text-decoration:none; font-weight:bold;">Read more →</a></p>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-date">Apr 12, 2025</div>
+                <h3>Network lab: VLAN segmentation notes</h3>
+                <p>
+                    Notes and takeaways from building a mock enterprise topology in Packet Tracer—VLAN planning, inter-VLAN
+                    routing, and lessons learned troubleshooting HSRP.
+                </p>
+                <p><a href="#" style="color:#667eea; text-decoration:none; font-weight:bold;">Read more →</a></p>
             </div>
         </section>
 
