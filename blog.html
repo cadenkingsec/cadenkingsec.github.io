@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html language="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Caden King | Blog</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav-bar">
+            <a href="index.html" class="site-title">Caden King</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false">&#9776;</button>
+        </div>
+
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html" aria-current="page">Blog</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Site Content -->
+    <main>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <h1>Blog</h1>
+            <hr>
+
+            <div class="blog-search">
+                <input type="search" id="blog-search-input" placeholder="Search blog posts..."
+                    aria-label="Search blog posts">
+            </div>
+
+            <p>Pretty much guaranteed to have typos and grammar mistakes. This is why I study computers :/.</p>
+
+            <p class="blog-count" id="blog-count"></p>
+
+            <!-- Newest posts appear first. Copy this <article> block to add a new post above it. -->
+            <div class="blog-posts" id="blog-posts">
+
+                <article class="blog-post" data-title="Sample blog post title">
+                    <p class="blog-post-meta">Aug 20, 2026</p>
+                    <h3>Heavily Corrupted Windows Files Computer Fix</h3>
+                    <span class="tag">Windows 11</span><span class="tag">Corrupted System Files</span>
+                    <p>
+                        Yesterday, I was about to play games with my cousin, but upon opening their gaming laptop, a
+                        Bitlocker key screen appeared.
+                        This was strange because they did not enable Bitlocker on their computer. I have personally set
+                        up computers with Bitlocker
+                        before at Virginia Green, so it was strange when this appeared. Keep in mind, my cousin did not
+                        know what Bitlocker was,
+                        and they didn't intentionally enable it on their computer.
+                    </p>
+                    <p>
+                        I helped them log in with their Bitlocker key that was automatically provided by signing into
+                        their Microsoft account online. My
+                        plan was just to disable Bitlocker and move on, however, their computer crashed upon boot. I
+                        forgot what the exact error was, but,
+                        essentially, something went wrong in Windows' boot process, and it entered WinRE.
+                    </p>
+                    <p>
+                        No problem! I could just repair the corrupted files with the automatic repair tools in WinRE!
+                        Nope. I don't remember a time those
+                        automatic repairs have every been successful from my experience. So, I utilized sfc, dism, and
+                        chkdsk. Actually, before I could use
+                        dism on the windows files, I had to decrypt the C: drive because of Bitlocker. I disabled
+                        BitLocker in the administrator command prompt
+                        within WinRE (SHIFT + F10, btw). Sfc and chkdsk could not find anything, and dism could not
+                        even
+                        run. My theory is that the Windows Update Client files were also corrupted.
+                    </p>
+                    <img src="images/IMG_0057.jpg" width="200">
+                    <p>
+                        At this point, I spent more time than I would have liked troubleshooting this. Thankfully,
+                        my cousin did not have anything she needed on the computer. So, I decided to do a clean install.
+                        I've done this multipe times before with a USB stick and changing the boot order in the UEFI
+                        settings. However, this was the first time that a clean install FAILED for me.
+                    </p>
+                    <img src="images/IMG_0064.jpg" width="200">
+                    <p>
+                        Originally, I could have still clean installed and save the data, however, something in the
+                        Windows
+                        system partition was so corrupted that I could not clean install without completely deleting the
+                        partitions. I utilized diskpart and the native GUI partition display in the clean install
+                        Windows
+                        setup to do this. Again, thankfully they did not need any data on this computer, so I could
+                        delete
+                        these. After deleting the partitions, I was able to successfully clean install Windows.
+                    </p>
+                    <p>
+                        Finally, I downloaded all the laptop-specific drivers and apps, signed into things, and
+                        personalized the PC. It was now fixed and ready for use again. I'm a good cousin :).
+                    </p>
+                    <p>
+                        I don't know the original cause for sure, but given that they hardly open their computer, it was
+                        most
+                        likely an interrupted Windows update. Or malware (one of the downsides of downloading some games
+                        on the internet from non-reputable places).
+                    </p>
+                </article>
+
+            </div>
+
+            <p class="blog-empty" id="blog-empty">No posts match your search.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caden King</p>
+    </footer>
+
+    <script>
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById("nav-toggle");
+        const mainNav = document.getElementById("main-nav");
+
+        navToggle.addEventListener("click", function () {
+            const isOpen = mainNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Blog search
+        const searchInput = document.getElementById("blog-search-input");
+        const blogPosts = Array.from(document.querySelectorAll(".blog-post"));
+        const blogCount = document.getElementById("blog-count");
+        const blogEmpty = document.getElementById("blog-empty");
+
+        function filterPosts() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            blogPosts.forEach(function (post) {
+                const haystack = (post.dataset.title + " " + post.textContent).toLowerCase();
+                const matches = haystack.includes(query);
+                post.style.display = matches ? "" : "none";
+                if (matches) visibleCount++;
+            });
+
+            blogCount.textContent = visibleCount + " post" + (visibleCount === 1 ? "" : "s");
+            blogEmpty.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterPosts);
+        filterPosts();
+
+        // Write an appropiate message to the console
+        console.log("Caden's blog page loaded successfully.");
+
+    </script>
+
+</body>
+
+</html>

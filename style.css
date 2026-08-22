@@ -1,0 +1,481 @@
+/*
+    --- Universal Selector ---
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+    --- Element Selectors ---
+*/
+body {
+    font-family: Times New Roman, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f4f7fa;
+    margin: 0;
+}
+
+header {
+    background-color: #172a3a;
+    color: white;
+    padding: 22px 40px;
+    border-bottom: 4px solid #2f80ed;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #d9e2ec;
+}
+
+/* Headings */
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    color: #172a3a;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #1f4e79;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #2c5d8a;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Paragraphs */
+p {
+    font-family: Helvetica, "Times New Roman", sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    color: #1769aa;
+}
+
+/*
+    --- Class Selector ---
+*/
+.section-title {
+    color: #1f4e79;
+    border-bottom: 2px solid #d9e2ec;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/*
+    --- ID Selector ---
+*/
+#career-goal {
+    background-color: #eef5fc;
+    border: 2px solid #2f80ed;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#career-goal h2 {
+    margin-top: 0;
+}
+
+/*
+    --- Descendant Selectors ---
+*/
+
+/*
+    Navigation Links Inside the Header
+*/
+header nav a {
+    color: #d9e8f5;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 8px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Lists inside the main content */
+main ul li,
+main ol li {
+    margin-bottom: 8px;
+}
+
+/*
+    Pseudo-Class Selectors
+*/
+
+/* Navigation hover effect */
+nav a:hover {
+    color: white;
+    background-color: #2f80ed;
+}
+
+/* Currently active page in the navigation */
+nav a[aria-current="page"] {
+    background-color: #2f80ed;
+    font-weight: bold;
+}
+
+/* General link hover effect */
+main a:hover {
+    color: #0b4f8a;
+    text-decoration: underline;
+}
+
+/* 
+    --- List Styling ---
+*/
+
+ul {
+    list-style-type: square;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+/*
+    --- Navigation Styling ---
+*/
+nav {
+    margin-top: 12px;
+    padding: 5px 0;
+}
+
+/*
+    --- Footer Styling ---
+*/
+footer {
+    background-color: #172a3a;
+    color: #d9e8f5;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 4px solid #2f80ed;
+}
+
+/*
+    --- Form Styling ---
+*/
+form {
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: #f8fafc;
+    border: 1px solid #d9e2ec;
+    border-radius: 6px;
+}
+
+/* Form labels and inputs */
+form label {
+    display: block;
+    font-weight: bold;
+    color: #172a3a;
+    margin-bottom: 5px;
+}
+
+/* Form inputs, textareas, and selects */
+form input,
+form textarea,
+form select {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border: 1px solid #b8c4d0;
+    border-radius: 4px;
+}
+
+/* textarea-specific sizing */
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Inline labels for checkboxes and radio buttons */
+fieldset label {
+    display: inline;
+}
+
+/* focus for form elements */
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #2f80ed;
+    outline: none;
+}
+
+/* Form submit button styling */
+form input[type="submit"],
+form button {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 5px;
+    color: white;
+    background-color: #1f4e79;
+    border: 1px solid #1f4e79;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background-color: #ed2f2f;
+}
+
+/*
+    --- Table Styling ---
+*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Header */
+th {
+    background-color: #1f4e79;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #1f4e79;
+}
+
+/* Table Cells */
+td {
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+    vertical-align: top;
+}
+
+/* Table Alternating Rows */
+tr:nth-child(even) {
+    background-color: #f4f7fa;
+}
+
+/* Table Hover Effect */
+tr:hover {
+    background-color: #e8f1f8;
+}
+
+/*
+    --- Table Responsive Wrapper ---
+*/
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/*
+    --- Navigation / Hamburger Toggle ---
+*/
+header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.site-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.site-title:hover {
+    color: #9fc9f7;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+nav {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*
+    --- Section Spacing ---
+*/
+main section {
+    margin-bottom: 40px;
+}
+
+main section:last-child {
+    margin-bottom: 0;
+}
+
+/*
+    --- Home Section ---
+*/
+.intro-tagline {
+    font-size: 19px;
+    color: #2c5d8a;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/*
+    --- Blog & Projects Search/Scroll Sections ---
+*/
+.blog-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-search input[type="search"] {
+    flex: 1;
+    padding: 10px 12px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border: 1px solid #b8c4d0;
+    border-radius: 4px;
+}
+
+.blog-search input[type="search"]:focus {
+    border-color: #2f80ed;
+    outline: none;
+}
+
+.blog-count {
+    color: #547;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.blog-posts {
+    max-height: 560px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border: 1px solid #d9e2ec;
+    border-radius: 6px;
+}
+
+.blog-post {
+    padding: 20px;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post-meta {
+    font-size: 14px;
+    color: #547;
+    margin-bottom: 6px;
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+.blog-post .tag {
+    display: inline-block;
+    background-color: #eef5fc;
+    color: #1f4e79;
+    border: 1px solid #2f80ed;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 13px;
+    margin-right: 6px;
+}
+
+.blog-empty {
+    padding: 20px;
+    color: #547;
+    font-style: italic;
+    display: none;
+}
+
+/*
+    --- Mobile Responsiveness ---
+*/
+@media (max-width: 700px) {
+    main {
+        margin: 15px;
+        padding: 18px;
+        width: auto;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    header nav a {
+        margin-right: 0;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .blog-search {
+        flex-direction: column;
+    }
+
+    .blog-posts {
+        max-height: 480px;
+    }
+
+    table {
+        min-width: 500px;
+    }
+}

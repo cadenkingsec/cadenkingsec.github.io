@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html language="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Caden King | Home</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav-bar">
+            <a href="index.html" class="site-title">Caden King</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false">&#9776;</button>
+        </div>
+
+        <nav id="main-nav">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Site Content -->
+    <main>
+
+        <!-- Home Section -->
+        <section id="home">
+            <img src="images/IMG_6850.jpg" alt="Portrait of Caden" width=200px>
+
+            <h1>Caden King</h1>
+
+            <p class="intro-tagline">
+                Network Engineering & Cybersecurity
+            </p>
+
+            <p>
+                Richmond, Virginia | caden.c.king@gmail.com
+            </p>
+
+            <h2 class="section-title">Welcome</h2>
+
+            <p>
+                Hi, I'm Caden — a network engineering and cybersecurity student based in Richmond, Virginia.
+                I got my start troubleshooting tickets on a help desk, and I've been building on that foundation
+                ever since through certifications, hands-on labs, and WGU coursework. I care about solving real IT
+                problems using everything I’ve learned so far and seeing the immediate impact of my work.
+            </p>
+
+            <p>
+                This site is where I share my resume, the projects I've been building, and short posts about
+                what I'm learning along the way. Feel free to look around, or reach out using the links below, or my
+                email. Email is preferred.
+            </p>
+
+            <div id="career-goal">
+                <h2 class="section-title">Career Goals</h2>
+                <p>
+                    My immediate goal is to land an entry-level or intern IT role where I can
+                    keep sharpening my troubleshooting skills. Common titles I am looking at right now include "IT
+                    Helpdesk" and "IT Technician" roles. Long-term, I have no concrete goals. I
+                    am excited to see where my career takes me! Cybersecurity is cool. Networking is cool. The bottom
+                    line
+                    is being in a role where I can be useful and helpful to people.
+                </p>
+            </div>
+
+            <p>
+                <a href="https://www.linkedin.com/in/cadenk/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/cadenkingIT" target="_blank">Github</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caden King</p>
+    </footer>
+
+    <script>
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById("nav-toggle");
+        const mainNav = document.getElementById("main-nav");
+
+        navToggle.addEventListener("click", function () {
+            const isOpen = mainNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Write an appropiate message to the console
+        console.log("Caden's home page loaded successfully.");
+
+    </script>
+
+</body>
+
+</html>

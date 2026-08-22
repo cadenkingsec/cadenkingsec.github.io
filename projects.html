@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html language="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Caden King | Projects</title>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="nav-bar">
+            <a href="index.html" class="site-title">Caden King</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        </div>
+
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="projects.html" aria-current="page">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Site Content -->
+    <main>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h1>Projects</h1>
+            <hr>
+
+            <div class="blog-search">
+                <input type="search" id="project-search-input" placeholder="Search projects..." aria-label="Search projects">
+            </div>
+
+            <p class="blog-count" id="project-count"></p>
+
+            <!-- Newest projects appear first -->
+            <div class="blog-posts" id="project-posts">
+
+                <article class="blog-post" data-title="Enterprise Network Troubleshooting Lab">
+                    <p class="blog-post-meta">GNS3 Cloud Simulation | July 2026</p>
+                    <h3>Enterprise Network Troubleshooting Lab</h3>
+                    <span class="tag">Networking</span><span class="tag">Security</span>
+                    <ul>
+                        <li>Resolved simulated service desk incidents in a cloud-hosted enterprise environment using
+                            Windows, Linux, Windows Server, Ubuntu Server, and OPNsense.</li>
+                        <li>Diagnosed and resolved DNS, routing, firewall, and TCP/IP connectivity issues using
+                            structured troubleshooting methodologies.</li>
+                        <li>Investigated suspicious FTP traffic using Wireshark packet captures to support simulated
+                            security incident investigations.</li>
+                        <li>Performed network validation, connectivity testing, and port scanning to verify services
+                            and assist troubleshooting efforts.</li>
+                        <li>Documented incident details, troubleshooting steps, root causes, and resolutions
+                            following professional service desk workflows.</li>
+                    </ul>
+                </article>
+
+                <article class="blog-post" data-title="Mock Enterprise Network Lab">
+                    <p class="blog-post-meta">Cisco Packet Tracer | April 2026 - May 2026</p>
+                    <h3>Mock Enterprise Network Lab</h3>
+                    <span class="tag">Networking</span><span class="tag">Packet Tracer</span>
+                    <ul>
+                        <li>Designed a three-tier enterprise topology with VLAN segmentation and routing, following
+                            guidance from Jeremy's IT Lab.</li>
+                        <li>Configured basic network services and troubleshot issues such as an HSRP active-standby
+                            flip-flop.</li>
+                    </ul>
+                </article>
+
+                <article class="blog-post" data-title="Custom Gaming Desktop">
+                    <p class="blog-post-meta">Personal Build | June 2024 - August 2024</p>
+                    <h3>Custom Gaming Desktop</h3>
+                    <span class="tag">Hardware</span><span class="tag">Personal Project</span>
+                    <ul>
+                        <li>Built, configured, and maintained a custom Windows desktop from individual hardware
+                            components.</li>
+                        <li>Installed Windows, drivers, firmware updates, and system software.</li>
+                        <li>Diagnosed and repaired hardware failures involving motherboard and CPU socket pin
+                            damage.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <p class="blog-empty" id="project-empty">No projects match your search.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caden King</p>
+    </footer>
+
+    <script>
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById("nav-toggle");
+        const mainNav = document.getElementById("main-nav");
+
+        navToggle.addEventListener("click", function () {
+            const isOpen = mainNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Project search
+        const searchInput = document.getElementById("project-search-input");
+        const projectPosts = Array.from(document.querySelectorAll("#project-posts .blog-post"));
+        const projectCount = document.getElementById("project-count");
+        const projectEmpty = document.getElementById("project-empty");
+
+        function filterProjects() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            projectPosts.forEach(function (post) {
+                const haystack = (post.dataset.title + " " + post.textContent).toLowerCase();
+                const matches = haystack.includes(query);
+                post.style.display = matches ? "" : "none";
+                if (matches) visibleCount++;
+            });
+
+            projectCount.textContent = visibleCount + " project" + (visibleCount === 1 ? "" : "s");
+            projectEmpty.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterProjects);
+        filterProjects();
+
+        // Write an appropiate message to the console
+        console.log("Caden's projects page loaded successfully.");
+
+    </script>
+
+</body>
+
+</html>
